@@ -1,0 +1,175 @@
+/* Search Selection */
+.ui.search.dropdown {
+  min-width: @searchMinWidth;
+}
+
+/* Search Dropdown */
+.ui.search.dropdown > input.search {
+  background: none transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: text;
+  top: 0em;
+  left: @textCursorSpacing;
+  width: 100%;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  padding: inherit;
+}
+
+/* Text Layering */
+.ui.search.dropdown > input.search {
+  position: absolute;
+  z-index: 2;
+}
+.ui.search.dropdown > .text {
+  cursor: text;
+  position: relative;
+  left: @textCursorSpacing;
+  z-index: 3;
+}
+
+/* Search Selection */
+.ui.search.selection.dropdown > input.search {
+  line-height: @searchSelectionLineHeight;
+  padding: @searchSelectionInputPadding;
+}
+
+/* Used to size multi select input to character width */
+.ui.search.selection.dropdown > span.sizer {
+  line-height: @searchSelectionLineHeight;
+  padding: @searchSelectionInputPadding;
+  display: none;
+  white-space: pre;
+}
+
+/* Active/Visible Search */
+.ui.search.dropdown.active > input.search,
+.ui.search.dropdown.visible > input.search {
+  cursor: auto;
+}
+.ui.search.dropdown.active > .text,
+.ui.search.dropdown.visible > .text {
+  pointer-events: none;
+}
+
+/* Filtered Text */
+.ui.active.search.dropdown input.search:focus + .text .icon,
+.ui.active.search.dropdown input.search:focus + .text .flag {
+  opacity: @selectionTextUnderlayIconOpacity;
+}
+.ui.active.search.dropdown input.search:focus + .text {
+  color: @selectionTextUnderlayColor !important;
+}
+
+/* Search Menu */
+.ui.search.dropdown .menu {
+  overflow-x: hidden;
+  overflow-y: auto;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+@media only screen and (max-width : @largestMobileScreen) {
+  .ui.search.dropdown .menu {
+    max-height: @searchMobileMaxMenuHeight;
+  }
+}
+@media only screen and (min-width: @tabletBreakpoint) {
+  .ui.search.dropdown .menu {
+    max-height: @searchTabletMaxMenuHeight;
+  }
+}
+@media only screen and (min-width: @computerBreakpoint) {
+  .ui.search.dropdown .menu {
+    max-height: @searchComputerMaxMenuHeight;
+  }
+}
+@media only screen and (min-width: @widescreenMonitorBreakpoint) {
+  .ui.search.dropdown .menu {
+    max-height: @searchWidescreenMaxMenuHeight;
+  }
+}
+
+.ui.fluid.dropdown {
+  display: block;
+  width: 100%;
+  min-width: 0em;
+}
+.ui.fluid.dropdown > .dropdown.icon {
+  float: right;
+}
+/* Displays like a select box */
+.ui.selection.dropdown {
+  cursor: pointer;
+  word-wrap: break-word;
+  line-height: 1em;
+  white-space: normal;
+  outline: 0;
+  transform: rotateZ(0deg);
+
+  min-width: @selectionMinWidth;
+  min-height: @selectionMinHeight;
+
+  background: @selectionBackground;
+  display: @selectionDisplay;
+  padding: @selectionPadding;
+  color: @selectionTextColor;
+  box-shadow: @selectionBoxShadow;
+  border: @selectionBorder;
+  border-radius: @selectionBorderRadius;
+  transition: @selectionTransition;
+}
+.ui.selection.dropdown.visible,
+.ui.selection.dropdown.active {
+  z-index: @selectionZIndex;
+}
+
+select.ui.dropdown {
+  height: @selectHeight;
+  padding: @selectPadding;
+  border: @selectBorder;
+  visibility: @selectVisibility;
+}
+.ui.selection.dropdown > .search.icon,
+.ui.selection.dropdown > .delete.icon,
+.ui.selection.dropdown > .dropdown.icon {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  height: auto;
+  line-height: @searchSelectionLineHeight;
+  top: @selectionVerticalPadding;
+  right: @selectionHorizontalPadding;
+  z-index: @selectionIconZIndex;
+  margin: @selectionIconMargin;
+  padding: @selectionIconPadding;
+  opacity: @selectionIconOpacity;
+  transition: @selectionIconTransition;
+}
+
+/* Compact */
+.ui.compact.selection.dropdown {
+  min-width:  0px;
+}
+
+/*  Selection Menu */
+.ui.selection.dropdown .menu {
+  overflow-x: hidden;
+  overflow-y: auto;
+  backface-visibility: hidden;
+  -webkit-overflow-scrolling: touch;
+  border-top-width: 0px !important;
+  width: auto;
+  outline: none;
+  margin: 0px -@menuBorderWidth;
+  min-width: @menuMinWidth;
+  width: @menuMinWidth;
+
+  border-radius: @selectionMenuBorderRadius;
+  box-shadow: @selectionMenuBoxShadow;
+  transition: @selectionMenuTransition;
+}
+.ui.selection.dropdown .menu:after,
+.ui.selection.dropdown .menu:before {
+  display: none;
+}

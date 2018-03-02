@@ -19,17 +19,36 @@
 <!-- Navigation bar at the top of the screen -->
 <div class="nav">Navigation Placeholder</div>
 
-<!-- Select your City, Theater and Cinematic Experience -->
+<!-- Select State -->
 <div class="selection">
-<div class="ui dropdown">
-  <input type="hidden" name="City">
+
+<select class="ui search dropdown">
+  <option value="">Select State</option>
+  <option value="CA">California</option>
+  <option value="ID">Idaho</option>
+</select>
+
+<!-- Select Cinematic Experience -->
+
+<select name="Cinematic Experience" multiple="" class="ui fluid dropdown">
+  <option value="">Select Cinematic Experience</option>
+<option value="DCC">Dolby Completely Captivating</option>
+<option value="R3D">Real 3D</option>
+<option value="XD">XD</option>
+<option value="IMAX">IMAX</option>
+</select>
+
+<!-- Select Theater -->
+
+<div class="ui selection dropdown">
+  <input type="hidden" name="Theater">
   <i class="dropdown icon"></i>
-  <div class="default text">Select Your City</div>
+  <div class="default text">Select Theater</div>
   <div class="menu">
-    <div class="item" data-value="san francisco">San Francisco</div>
+    <div class="item" data-value="1">AMC Metreon 16</div>
+    <div class="item" data-value="0">AMC Kabuki 8</div>
   </div>
 </div>
-
 
 </div>
 
